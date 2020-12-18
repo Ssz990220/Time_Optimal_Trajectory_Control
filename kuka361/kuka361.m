@@ -42,7 +42,7 @@ solver = 'sdpt3';
 solver = 'sedumi';
     
 % Number of grid points.
-sgrid = 500;
+sgrid = 2000;
 
 % Load KUKA 361 parameters.
 params361;
@@ -90,6 +90,7 @@ coulomb = 1;
 % Fetch all path-dependent quantities.
 [s, sm, ds, q, qp, qpp, Mv, Cv, gv] = dynpathparams(invdynfun, pathfun, sgrid, coulomb);
 
+plot(sm,qp(1,:));
 for l = 1:length(gamma1)
 for m = 1:length(gamma2)
 	close all

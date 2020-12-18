@@ -3,11 +3,11 @@ function [b,a,u] = get_bau(x)
 %   Detailed explanation goes here
 b = zeros(size(x,1)/4,1);
 a = zeros(size(x,1)/4,1);
-u = zeros(size(x,1)/4*2,1);
+u = zeros(size(x,1)/4,2);
 for k=1:size(x)/4
-    b(k) = x((k-1)*4+1);
+     b(k) = x((k-1)*4+1);
     a(k) = x((k-1)*4+2);
-    u((k-1)*2+1:(k-1)*2+2) = x((k-1)*4+3:(k-1)*4+4);
+    u(k,:) = [x((k-1)*4+3);x((k-1)*4+4)];
 end
 end
 
